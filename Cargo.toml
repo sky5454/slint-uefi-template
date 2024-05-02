@@ -1,0 +1,31 @@
+# Copyright © SixtyFPS GmbH <info@slint.dev>
+# SPDX-License-Identifier: MIT
+
+[package]
+name = "slint-uefi-template"
+version = "1.6.1"
+edition = "2021"
+license = "MIT"
+build = "build.rs"
+publish = false
+
+[[bin]]
+path = "main.rs"
+name = "slint-uefi-template"
+
+[dependencies]
+uefi = "0.20.0"
+uefi-services = "0.17.0"
+minipng = "=0.1.1"
+
+slint = { version = "1.5.1", default-features = false, features = [
+    "compat-1-2",
+    "renderer-software",
+    "libm",
+    "log",
+    "unsafe-single-threaded",
+] }
+log = "0.4.21"
+
+[build-dependencies]
+slint-build = { version = "1.5.1" }
